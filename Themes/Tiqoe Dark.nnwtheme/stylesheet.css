@@ -524,3 +524,8 @@ a.footnote:hover,
 .inline-invite.inline-invite-type__funding.inline-invite-style__default:has(> .inline-invite-funding__box):has([href*="give.newshour.org"]) {
 	display: none;
 }
+
+/* TechCrunch → Reader View */
+.affiliate-disclaimer-text:has([href*="techcrunch.com/techcrunch-affiliate-monetization-standards"]) {
+	display: none;
+}
