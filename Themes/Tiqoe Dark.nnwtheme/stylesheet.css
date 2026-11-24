@@ -548,6 +548,13 @@ div:has([href*="macworld.com/newsletters/signup"]) :is(figcaption, button.lightb
 	display: none;
 }
 
+/* Daring Fireball */
+body:has(a.feedlink[href="https://daringfireball.net/"]) {
+	audio {
+		width: 100%;
+	}
+}
+
 /* 7.3 */
 .nnw-primary-image img,
 .nnw-enclosure-image img {
