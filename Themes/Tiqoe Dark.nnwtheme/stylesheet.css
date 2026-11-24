@@ -523,6 +523,21 @@ a.footnote:hover,
 	display: none;
 }
 
+body:has(a.feedlink[href="https://www.pbs.org/newshour/"]) {
+	img { 
+		max-height: 66.6667vh;
+		width: auto;
+	}
+}
+
+/* ProPublica */
+body:has(a.feedlink[href="https://www.propublica.org/"]) {
+	img {
+		max-height: 66.6667vh;
+		width: auto;
+	}
+}
+
 /* TechCrunch → Reader View */
 .affiliate-disclaimer-text:has([href*="techcrunch.com/techcrunch-affiliate-monetization-standards"]) {
 	display: none;
