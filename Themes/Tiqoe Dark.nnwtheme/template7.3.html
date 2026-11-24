@@ -58,28 +58,44 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-// TechCrunch → Reader View
 const feedLink = document.querySelector(".feedlink");
 
+// TechCrunch → Reader View
 if (feedLink.href.includes("techcrunch.com")) {
 
 	document.querySelectorAll("img[sizes^='auto']").forEach(img => {
 		img.sizes = img.sizes.split(",").slice(1).join(",").trim();
 	});
 }
+
+// ProPublica
+if (feedLink.href.includes("https://www.propublica.org/")) {
+
+	document.querySelectorAll("img[sizes^='auto']").forEach(img => {
+		img.sizes = img.sizes.split(",").slice(1).join(",").trim();
+	});
+}
+
+// blog.the-ebook-reader.com
+if (feedLink.href.includes("blog.the-ebook-reader.com")) {
+
+	document.querySelectorAll(".nnw-primary-media").forEach(div => {
+		div.style.display = "none";
+	});
+}
 </script>
 
 <script>
-// blog.the-ebook-reader.com
-document.addEventListener("DOMContentLoaded", () => {
+// macOS
+if (!CSS.supports("-webkit-touch-callout", "none")) {
 
-	const feedLink = document.querySelector(".feedlink");
+	document.querySelectorAll(".nnw-enclosure-image img").forEach(img => {
 
-	if (feedLink.href.includes("blog.the-ebook-reader.com")) {
+		const a = document.createElement("a");
+		a.href = img.src;
 
-		document.querySelectorAll(".nnw-primary-media").forEach(div => {
-			div.style.display = "none";
-		});
-	}
-});
+		img.replaceWith(a);
+		a.append(img);
+	});
+}
 </script>
